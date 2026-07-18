@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحلیل‌خانه سیاست خارجی رُک | جواد قیصری</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tahoma', 'Segoe UI', sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+            color: #1a1a2e;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c0392b;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a93226;
+        }
+
+        .header {
+            background: #fff;
+            border-bottom: 4px solid #c0392b;
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo h1 {
+            font-size: 28px;
+            color: #1a1a2e;
+        }
+        .logo h1 .rok {
+            color: #c0392b;
+            font-weight: 900;
+            font-size: 32px;
+        }
+        .logo h1 .sub {
+            color: #f7971e;
+            font-weight: 300;
+            font-size: 20px;
+        }
+        .logo small {
+            color: #999;
+            font-size: 12px;
+            display: block;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        .logo small .manager {
+            color: #c0392b;
+            font-weight: 700;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .header-left .datetime {
+            color: #888;
+            font-size: 13px;
+            direction: ltr;
+            text-align: left;
+            font-family: 'Tahoma', 'Segoe UI', sans-serif;
+        }
+        .header-left .datetime .date-part {
+            color: #555;
+            font-weight: 500;
+        }
+        .header-left .datetime .time-part {
+            color: #c0392b;
+            font-weight: 700;
+            font-size: 15px;
+            margin-right: 5px;
+            font-variant-numeric: tabular-nums;
+        }
+        .header-left .datetime .separator {
+            color: #ccc;
+            margin: 0 5px;
+        }
+        .header-left .online-status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .header-left .online-status.online {
+            background: #27ae60;
+            box-shadow: 0 0 10px rgba(39, 174, 96, 0.5);
+        }
+        .header-left .online-status.offline {
+            background: #e74c3c;
+            box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+        }
+        .header-left .stats {
+            color: #888;
+            font-size: 13px;
+        }
+        .header-left .stats strong {
+            color: #1a1a2e;
+        }
+        .header-left .btn-write {
+            padding: 8px 22px;
+            border: none;
+            border-radius: 30px;
+            background: #c0392b;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+        .header-left .btn-write:hover {
+            background: #a93226;
+            transform: scale(1.05);
+        }
+        .header-left .btn-write:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .header-left .btn-lock {
+            padding: 8px 18px;
+            border: none;
+            border-radius: 30px;
+            background: #2c3e50;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+        .header-left .btn-lock:hover {
+            background: #1a252f;
+        }
+        .header-left .btn-lock.unlocked {
+            background: #27ae60;
+        }
+        .header-left .btn-lock.unlocked:hover {
+            background: #1e8449;
+        }
+
+        .menu {
+            background: #1a1a2e;
+            padding: 0 30px;
+            position: sticky;
+            top: 78px;
+            z-index: 99;
+            border-bottom: 3px solid #c0392b;
+        }
+        .menu-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .menu-inner button {
+            padding: 12px 22px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        .menu-inner button:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .menu-inner button.active {
+            color: #fff;
+            border-bottom-color: #c0392b;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .menu-inner .search-box {
+            margin-right: auto;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .menu-inner .search-box input {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+            transition: 0.3s;
+            width: 180px;
+        }
+        .menu-inner .search-box input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .menu-inner .search-box input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            width: 220px;
+        }
+        .menu-inner .search-box button {
+            padding: 6px 14px;
+            background: #c0392b;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .menu-inner .search-box button:hover {
+            background: #a93226;
+        }
+        .menu-inner .search-box .clear-search {
+            background: transparent;
+            color: rgba(255,255,255,0.5);
+            padding: 6px 8px;
+            font-size: 16px;
+            display: none;
+        }
+        .menu-inner .search-box .clear-search:hover {
+            color: #fff;
+            background: transparent;
+        }
+        .menu-inner .search-box .clear-search.show {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 25px 20px;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .loading-overlay.show {
+            display: flex;
+        }
+        .loading-overlay .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #c0392b;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loading-overlay .loading-text {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .write-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #c0392b;
+            display: none;
+        }
+        .write-box.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        .write-box.locked .btn-save,
+        .write-box.locked input,
+        .write-box.locked textarea,
+        .write-box.locked select {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .write-box.locked .lock-badge {
+            display: block;
+        }
+        .lock-badge {
+            display: none;
+            background: #e74c3c;
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .write-box h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+        .write-box h2 span {
+            color: #c0392b;
+        }
+        .write-box .form-group {
+            margin-bottom: 12px;
+        }
+        .write-box .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 4px;
+        }
+        .write-box select,
+        .write-box input,
+        .write-box textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e8e8e8;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: 0.3s;
+            outline: none;
+            background: #fafafa;
+            color: #1a1a2e;
+        }
+        .write-box select:focus,
+        .write-box input:focus,
+        .write-box textarea:focus {
+            border-color: #c0392b;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+        }
+        .write-box textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .write-box .row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .write-box .row>* {
+            flex: 1;
+            min-width: 150px;
+        }
+        .write-box .btns {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+        .write-box .btns button {
+            padding: 12px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-save {
+            background: #c0392b;
+            color: #fff;
+        }
+        .btn-save:hover:not(:disabled) {
+            background: #a93226;
+            transform: scale(1.02);
+        }
+        .btn-save:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .btn-close-write {
+            background: #e8e8e8;
+            color: #555;
+        }
+        .btn-close-write:hover {
+            background: #d5d5d5;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .news-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border-top: 4px solid #c0392b;
+            position: relative;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+        .news-card .image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .news-card .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .news-card .image .image-placeholder {
+            font-size: 60px;
+        }
+        .news-card .image .views-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        .news-card .body {
+            padding: 20px;
+        }
+        .news-card .category {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: #fde8e8;
+            color: #c0392b;
+        }
+        .news-card .title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .news-card .summary {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .news-card .read-more {
+            color: #c0392b;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            margin-top: 8px;
+            display: inline-block;
+        }
+        .news-card .read-more:hover {
+            text-decoration: underline;
+        }
+        .news-card .footer-card {
+            padding: 15px 20px;
+            border-top: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .news-card .footer-card .date {
+            color: #999;
+            font-size: 12px;
+        }
+        .news-card .footer-card .actions {
+            display: flex;
+            gap: 8px;
+        }
+        .news-card .footer-card .actions button {
+            padding: 5px 14px;
+            border: none;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-edit-news {
+            background: #e8f0fe;
+            color: #1a73e8;
+        }
+        .btn-edit-news:hover:not(:disabled) {
+            background: #d2e3fc;
+        }
+        .btn-edit-news:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        .btn-del-news {
+            background: #fce8e8;
+            color: #d32f2f;
+        }
+        .btn-del-news:hover:not(:disabled) {
+            background: #f5d0d0;
+        }
+        .btn-del-news:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: #999;
+            padding: 60px 20px;
+        }
+        .empty .big {
+            font-size: 70px;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .empty h3 {
+            font-weight: 400;
+            color: #888;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.2s ease;
+        }
+        .modal.show {
+            display: flex;
+        }
+        .modal-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .modal-box h2 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+        }
+        .modal-box p {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .modal-box .password-wrapper {
+            position: relative;
+            direction: ltr;
+        }
+        .modal-box .password-wrapper input {
+            width: 100%;
+            padding: 14px 50px 14px 18px;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            font-size: 18px;
+            text-align: center;
+            letter-spacing: 5px;
+            outline: none;
+            transition: 0.3s;
+            direction: ltr;
+        }
+        .modal-box .password-wrapper input:focus {
+            border-color: #c0392b;
+            box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+        }
+        .modal-box .password-wrapper .toggle-password {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: #999;
+            padding: 5px;
+            transition: 0.3s;
+        }
+        .modal-box .password-wrapper .toggle-password:hover {
+            color: #1a1a2e;
+        }
+        .modal-box .modal-btns {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        .modal-box .modal-btns button {
+            padding: 10px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .modal-box .btn-unlock {
+            background: #c0392b;
+            color: #fff;
+        }
+        .modal-box .btn-unlock:hover {
+            background: #a93226;
+        }
+        .modal-box .btn-cancel-modal {
+            background: #e8e8e8;
+            color: #555;
+        }
+        .modal-box .btn-cancel-modal:hover {
+            background: #d5d5d5;
+        }
+        .modal-box .error {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
+        }
+        .modal-box .error.show {
+            display: block;
+        }
+
+        .modal-full {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.2s ease;
+            padding: 20px;
+        }
+        .modal-full.show {
+            display: flex;
+        }
+        .modal-full-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .modal-full-box .close-full {
+            position: sticky;
+            top: 0;
+            float: left;
+            background: #e8e8e8;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .modal-full-box .close-full:hover {
+            background: #d5d5d5;
+            transform: rotate(90deg);
+        }
+        .modal-full-box .full-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 15px 0 10px;
+            color: #1a1a2e;
+        }
+        .modal-full-box .full-meta {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        .modal-full-box .full-content {
+            line-height: 2;
+            font-size: 15px;
+            color: #333;
+            white-space: pre-wrap;
+        }
+        .modal-full-box .full-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .clear-all-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .btn-clear-all {
+            padding: 8px 25px;
+            border: 2px solid #e74c3c;
+            border-radius: 30px;
+            background: transparent;
+            color: #e74c3c;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-clear-all:hover:not(:disabled) {
+            background: #e74c3c;
+            color: #fff;
+        }
+        .btn-clear-all:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        #toast {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            left: 25px;
+            max-width: 400px;
+            margin: 0 auto;
+            background: #1a1a2e;
+            padding: 14px 22px;
+            border-radius: 14px;
+            color: #fff;
+            display: none;
+            z-index: 999;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        #toast.show {
+            display: block;
+            animation: up 0.3s ease;
+        }
+        @keyframes up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            color: #ccc;
+            font-size: 13px;
+            margin-top: 50px;
+            padding: 25px;
+            border-top: 1px solid #e8e8e8;
+            background: #fff;
+        }
+        .footer strong {
+            color: #c0392b;
+        }
+        .footer .manager {
+            color: #f7971e;
+        }
+        .footer .lock-status {
+            color: #888;
+            font-size: 11px;
+            margin-top: 5px;
+        }
+        .footer .lock-status .locked-text {
+            color: #e74c3c;
+        }
+        .footer .lock-status .unlocked-text {
+            color: #27ae60;
+        }
+
+        @media (max-width: 700px) {
+            .header {
+                padding: 12px 15px;
+            }
+            .logo h1 {
+                font-size: 22px;
+            }
+            .logo h1 .rok {
+                font-size: 26px;
+            }
+            .menu {
+                padding: 0 15px;
+                top: 72px;
+            }
+            .menu-inner button {
+                padding: 10px 14px;
+                font-size: 12px;
+            }
+            .menu-inner .search-box input {
+                width: 120px;
+            }
+            .menu-inner .search-box input:focus {
+                width: 150px;
+            }
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            .write-box {
+                padding: 18px;
+            }
+            .header-left .datetime {
+                font-size: 11px;
+            }
+            .header-left .datetime .time-part {
+                font-size: 13px;
+            }
+            .header-left .btn-lock {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+            .modal-full-box {
+                padding: 20px;
+            }
+            .modal-full-box .full-title {
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 400px) {
+            .logo h1 {
+                font-size: 18px;
+            }
+            .logo h1 .rok {
+                font-size: 22px;
+            }
+            .header-left .stats {
+                font-size: 11px;
+            }
+            .header-left .btn-write {
+                font-size: 11px;
+                padding: 6px 14px;
+            }
+            .menu-inner .search-box {
+                width: 100%;
+                margin-right: 0;
+            }
+            .menu-inner .search-box input {
+                flex: 1;
+                width: auto;
+            }
+            .menu-inner .search-box input:focus {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <div class="loading-text" id="loadingText">⏳ در حال اتصال به سرور...</div>
+    </div>
+
+    <div class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <h1>
+                    <span class="rok">رُک</span>
+                    <span class="sub">|</span>
+                    <span style="font-size:18px;font-weight:300;">تحلیل‌خانه سیاست خارجی</span>
+                </h1>
+                <small>مدیر مسئول: <span class="manager">جواد قیصری</span> · Rok Foreign Policy Analysis House</small>
+            </div>
+            <div class="header-left">
+                <span class="datetime" id="datetimeDisplay">
+                    <span class="date-part" id="todayDate"></span>
+                    <span class="separator">|</span>
+                    <span class="time-part" id="todayTime">00:00:00</span>
+                    <span class="online-status online" id="onlineStatus"></span>
+                </span>
+                <span class="stats">📰 <strong id="newsCount">0</strong> تحلیل</span>
+                <button class="btn-write" id="showWriteBtn">✏️ تحلیل جدید</button>
+                <button class="btn-lock" id="lockBtn">🔒 قفل</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div class="menu-inner" id="menuContainer">
+            <button class="active" data-category="all">🏠 همه</button>
+            <button data-category="سیاسی">🌍 سیاسی</button>
+            <button data-category="اقتصادی">💰 اقتصادی</button>
+            <button data-category="امنیتی">🛡️ امنیتی</button>
+            <button data-category="دیپلماسی">🤝 دیپلماسی</button>
+            <button data-category="تحلیل">📊 تحلیل</button>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 جستجو...">
+                <button id="searchBtn">جستجو</button>
+                <button class="clear-search" id="clearSearchBtn">✕</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="write-box locked" id="writeBox">
+            <div class="lock-badge">🔒 قفل است · برای ویرایش قفل را باز کنید</div>
+            <h2>✏️ نوشتن <span>تحلیل جدید</span></h2>
+            <div class="row">
+                <div class="form-group">
+                    <label>عنوان تحلیل</label>
+                    <input type="text" id="newsTitle" placeholder="عنوان تحلیل...">
+                </div>
+                <div class="form-group">
+                    <label>دسته‌بندی</label>
+                    <select id="newsCategory">
+                        <option value="سیاسی">🌍 سیاسی</option>
+                        <option value="اقتصادی">💰 اقتصادی</option>
+                        <option value="امنیتی">🛡️ امنیتی</option>
+                        <option value="دیپلماسی">🤝 دیپلماسی</option>
+                        <option value="تحلیل">📊 تحلیل</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>لینک عکس (اختیاری)</label>
+                <input type="text" id="newsImage" placeholder="https://example.com/image.jpg">
+            </div>
+            <div class="form-group">
+                <label>متن تحلیل</label>
+                <textarea id="newsContent" placeholder="متن تحلیل را بنویسید..."></textarea>
+            </div>
+            <div class="btns">
+                <button class="btn-save" id="saveNewsBtn">📝 انتشار تحلیل</button>
+                <button class="btn-close-write" id="closeWriteBtn">✖ انصراف</button>
+            </div>
+            <div style="margin-top:10px;font-size:12px;color:#999;">
+                💡 نکته: برای انتشار سریع از کلیدهای <kbd>Ctrl</kbd> + <kbd>Enter</kbd> استفاده کنید
+            </div>
+        </div>
+
+        <div class="news-grid" id="newsGrid"></div>
+
+        <div class="clear-all-container">
+            <button class="btn-clear-all" id="clearAllBtn" disabled>🗑️ حذف همه تحلیل‌ها</button>
+        </div>
+
+        <div class="footer">
+            <p>🏛️ <strong>تحلیل‌خانه سیاست خارجی رُک</strong> · مدیریت: <span class="manager">جواد قیصری</span></p>
+            <p style="color:#ccc;font-size:12px;margin-top:5px;">تمامی حقوق محفوظ است · Rok Foreign Policy Analysis House</p>
+            <div class="lock-status">
+                وضعیت: <span class="locked-text" id="lockStatusText">🔒 قفل است</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="lockModal">
+        <div class="modal-box">
+            <h2>🔒 قفل مدیریت</h2>
+            <p>برای ویرایش سایت، رمز عبور را وارد کنید</p>
+            <div class="password-wrapper">
+                <input type="password" id="passwordInput" placeholder="رمز عبور" maxlength="20">
+                <button class="toggle-password" id="togglePasswordBtn" type="button" title="نمایش/مخفی کردن رمز">
+                    👁️
+                </button>
+            </div>
+            <div class="error" id="passwordError">❌ رمز عبور اشتباه است</div>
+            <div class="modal-btns">
+                <button class="btn-unlock" id="unlockBtn">🔓 باز کردن قفل</button>
+                <button class="btn-cancel-modal" id="cancelModalBtn">انصراف</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-full" id="fullModal">
+        <div class="modal-full-box">
+            <button class="close-full" id="closeFullModal">✕</button>
+            <div id="fullContent"></div>
+        </div>
+    </div>
+
+    <div id="toast"><span id="toastText"></span></div>
+
+    <script>
+        // ================================================================
+        // 🔑 تنظیمات JSONBin (با مقادیر شما)
+        // ================================================================
+        const BIN_ID = '6a5b0279f5f4af5e299f5bfe';
+        const API_KEY = '$2a$10$HogMmj9K/b3GQswOyRQU9.Cbh3OV0sNzzqCCCtRcIrZWWEonVeLUW';
+
+        // ================================================================
+        //  رمز عبور
+        // ================================================================
+        const ADMIN_PASSWORD = 'javad1389';
+
+        // ================================================================
+        //  وضعیت
+        // ================================================================
+        let isUnlocked = false;
+        let isOnline = false;
+        let allNews = [];
+
+        // ================================================================
+        //  توابع ذخیره و بازیابی آنلاین با JSONBin
+        // ================================================================
+        async function loadNewsFromServer() {
+            try {
+                showLoading(true);
+                document.getElementById('loadingText').textContent = '⏳ در حال دریافت اطلاعات...';
+                
+                const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+                    headers: {
+                        'X-Master-Key': API_KEY
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error('خطا در دریافت اطلاعات');
+                }
+                
+                const data = await response.json();
+                const record = data.record;
+                
+                if (record && record.news) {
+                    allNews = record.news;
+                } else {
+                    allNews = [];
+                }
+                
+                updateOnlineStatus(true);
+                renderNews();
+                showLoading(false);
+                showToast('✅ اطلاعات با موفقیت بارگذاری شد');
+                
+            } catch (error) {
+                console.error('Error loading news:', error);
+                updateOnlineStatus(false);
+                showLoading(false);
+                
+                // تلاش برای بارگذاری از LocalStorage
+                const localData = localStorage.getItem('rok_news_backup');
+                if (localData) {
+                    try {
+                        allNews = JSON.parse(localData);
+                        renderNews();
+                        showToast('⚠️ اطلاعات از حافظه محلی بارگذاری شد (آفلاین)', 3000);
+                    } catch {
+                        allNews = [];
+                        renderNews();
+                        showToast('⚠️ خطا در اتصال به سرور - حالت آفلاین', 3000);
+                    }
+                } else {
+                    allNews = [];
+                    renderNews();
+                    showToast('⚠️ خطا در اتصال به سرور - حالت آفلاین', 3000);
+                }
+            }
+        }
+
+        async function saveNewsToServer(newsData) {
+            try {
+                showLoading(true);
+                document.getElementById('loadingText').textContent = '⏳ در حال ذخیره اطلاعات...';
+                
+                const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': API_KEY
+                    },
+                    body: JSON.stringify({ news: newsData })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('خطا در ذخیره اطلاعات');
+                }
+                
+                // پشتیبان در LocalStorage
+                localStorage.setItem('rok_news_backup', JSON.stringify(newsData));
+                
+                updateOnlineStatus(true);
+                showLoading(false);
+                return true;
+                
+            } catch (error) {
+                console.error('Error saving news:', error);
+                updateOnlineStatus(false);
+                showLoading(false);
+                
+                // ذخیره در LocalStorage به عنوان پشتیبان
+                localStorage.setItem('rok_news_backup', JSON.stringify(newsData));
+                showToast('⚠️ اطلاعات در حافظه محلی ذخیره شد (آفلاین)', 3000);
+                return false;
+            }
+        }
+
+        // ================================================================
+        //  نمایش لودینگ
+        // ================================================================
+        function showLoading(show) {
+            document.getElementById('loadingOverlay').classList.toggle('show', show);
+        }
+
+        // ================================================================
+        //  وضعیت آنلاین
+        // ================================================================
+        function updateOnlineStatus(status) {
+            isOnline = status;
+            const el = document.getElementById('onlineStatus');
+            if (status) {
+                el.className = 'online-status online';
+                el.title = 'متصل به سرور';
+            } else {
+                el.className = 'online-status offline';
+                el.title = 'قطع ارتباط با سرور';
+            }
+        }
+
+        // ================================================================
+        //  ابزارها
+        // ================================================================
+        function escHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function showToast(text, duration = 2500) {
+            const el = document.getElementById('toast');
+            document.getElementById('toastText').textContent = text;
+            el.classList.add('show');
+            clearTimeout(el._timer);
+            el._timer = setTimeout(() => el.classList.remove('show'), duration);
+        }
+
+        function getCategoryEmoji(cat) {
+            const map = {
+                'سیاسی': '🌍',
+                'اقتصادی': '💰',
+                'امنیتی': '🛡️',
+                'دیپلماسی': '🤝',
+                'تحلیل': '📊'
+            };
+            return map[cat] || '📰';
+        }
+
+        function getCategoryColor(cat) {
+            const map = {
+                'سیاسی': '#c0392b',
+                'اقتصادی': '#f39c12',
+                'امنیتی': '#2c3e50',
+                'دیپلماسی': '#2980b9',
+                'تحلیل': '#8e44ad'
+            };
+            return map[cat] || '#c0392b';
+        }
+
+        function formatDate(dateStr) {
+            try {
+                const d = new Date(dateStr);
+                return d.toLocaleDateString('fa-IR') + ' - ' + d.toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' });
+            } catch {
+                return '';
+            }
+        }
+
+        function formatRelativeTime(dateStr) {
+            try {
+                const now = new Date();
+                const then = new Date(dateStr);
+                const diff = Math.floor((now - then) / 1000);
+                
+                if (diff < 60) return 'لحظاتی پیش';
+                if (diff < 3600) return Math.floor(diff / 60) + ' دقیقه پیش';
+                if (diff < 86400) return Math.floor(diff / 3600) + ' ساعت پیش';
+                if (diff < 172800) return 'دیروز';
+                if (diff < 604800) return Math.floor(diff / 86400) + ' روز پیش';
+                return formatDate(dateStr);
+            } catch {
+                return '';
+            }
+        }
+
+        function updateClearAllButton() {
+            const btn = document.getElementById('clearAllBtn');
+            if (allNews.length > 0 && isUnlocked) {
+                btn.disabled = false;
+            } else {
+                btn.disabled = true;
+            }
+        }
+
+        // ================================================================
+        //  نمایش تاریخ و ساعت
+        // ================================================================
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('todayDate').textContent = now.toLocaleDateString('fa-IR', options);
+            document.getElementById('todayTime').textContent = now.toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        }
+
+        // ================================================================
+        //  رندر اخبار
+        // ================================================================
+        let currentCategory = 'all';
+        let searchQuery = '';
+
+        function renderNews() {
+            const grid = document.getElementById('newsGrid');
+
+            let filtered = [...allNews];
+            
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(n => n.category === currentCategory);
+            }
+            
+            if (searchQuery.trim()) {
+                const query = searchQuery.trim().toLowerCase();
+                filtered = filtered.filter(n => 
+                    n.title.toLowerCase().includes(query) || 
+                    n.content.toLowerCase().includes(query)
+                );
+            }
+
+            document.getElementById('newsCount').textContent = filtered.length;
+            updateClearAllButton();
+
+            const clearBtn = document.getElementById('clearSearchBtn');
+            if (searchQuery.trim()) {
+                clearBtn.classList.add('show');
+            } else {
+                clearBtn.classList.remove('show');
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty">
+                        <span class="big">📭</span>
+                        <h3>${searchQuery ? 'نتیجه‌ای برای جستجوی شما یافت نشد' : 'هیچ تحلیلی ثبت نشده'}</h3>
+                        <p style="color:#bbb;margin-top:8px;">${searchQuery ? 'لطفاً عبارت دیگری را جستجو کنید' : 'برای شروع، اولین تحلیل خود را بنویسید!'}</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map((news, index) => {
+                const realIndex = allNews.indexOf(news);
+                const views = news.views || 0;
+                return `
+                    <div class="news-card">
+                        <div class="image" style="background: linear-gradient(135deg, ${getCategoryColor(news.category)}, ${getCategoryColor(news.category)}dd);">
+                            ${news.image ? `<img src="${news.image}" alt="${escHtml(news.title)}" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\\'image-placeholder\\'>${getCategoryEmoji(news.category)}</div>';">` : `<div class="image-placeholder">${getCategoryEmoji(news.category)}</div>`}
+                            <div class="views-badge">👁️ ${views}</div>
+                        </div>
+                        <div class="body">
+                            <span class="category">${getCategoryEmoji(news.category)} ${news.category}</span>
+                            <div class="title">${escHtml(news.title)}</div>
+                            <div class="summary">${escHtml(news.content)}</div>
+                            <span class="read-more" onclick="showFullNews(${realIndex})">ادامه مطلب...</span>
+                        </div>
+                        <div class="footer-card">
+                            <span class="date">🕐 ${formatRelativeTime(news.date)}</span>
+                            <div class="actions">
+                                <button class="btn-edit-news" onclick="editNews(${realIndex})" ${!isUnlocked ? 'disabled' : ''}>✏️</button>
+                                <button class="btn-del-news" onclick="deleteNews(${realIndex})" ${!isUnlocked ? 'disabled' : ''}>🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ================================================================
+        //  نمایش کامل مطلب
+        // ================================================================
+        window.showFullNews = function(index) {
+            const item = allNews[index];
+            if (!item) return;
+            
+            item.views = (item.views || 0) + 1;
+            
+            // ذخیره خودکار بازدید
+            saveNewsToServer(allNews);
+            
+            const modal = document.getElementById('fullModal');
+            const content = document.getElementById('fullContent');
+            
+            content.innerHTML = `
+                ${item.image ? `<img src="${item.image}" class="full-image" alt="${escHtml(item.title)}" onerror="this.style.display='none';">` : ''}
+                <div class="full-meta">
+                    <span>${getCategoryEmoji(item.category)} ${item.category}</span>
+                    <span style="margin:0 10px;">•</span>
+                    <span>🕐 ${formatDate(item.date)}</span>
+                    <span style="margin:0 10px;">•</span>
+                    <span>👁️ ${(item.views || 0) + 1} بازدید</span>
+                </div>
+                <div class="full-title">${escHtml(item.title)}</div>
+                <div class="full-content">${escHtml(item.content)}</div>
+            `;
+            
+            modal.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        };
+
+        document.getElementById('closeFullModal').addEventListener('click', function() {
+            document.getElementById('fullModal').classList.remove('show');
+            document.body.style.overflow = '';
+        });
+
+        document.getElementById('fullModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ================================================================
+        //  عملیات اخبار
+        // ================================================================
+        function saveNewsItem() {
+            if (!isUnlocked) {
+                showToast('🔒 ابتدا قفل را باز کنید');
+                return;
+            }
+
+            const title = document.getElementById('newsTitle').value.trim();
+            const category = document.getElementById('newsCategory').value;
+            const content = document.getElementById('newsContent').value.trim();
+            const image = document.getElementById('newsImage').value.trim();
+
+            if (!title || !content) {
+                showToast('⚠️ عنوان و متن را پر کنید');
+                return;
+            }
+
+            if (title.length < 3) {
+                showToast('⚠️ عنوان باید حداقل ۳ حرف باشد');
+                return;
+            }
+
+            if (content.length < 10) {
+                showToast('⚠️ متن باید حداقل ۱۰ حرف باشد');
+                return;
+            }
+
+            const newNews = {
+                title: title,
+                category: category,
+                content: content,
+                image: image || '',
+                date: new Date().toISOString(),
+                views: 0
+            };
+
+            allNews.unshift(newNews);
+            
+            saveNewsToServer(allNews).then(success => {
+                if (success) {
+                    document.getElementById('newsTitle').value = '';
+                    document.getElementById('newsContent').value = '';
+                    document.getElementById('newsImage').value = '';
+                    renderNews();
+                    showToast('✅ تحلیل با موفقیت منتشر شد');
+                    closeWriteBox();
+                }
+            });
+        }
+
+        window.deleteNews = function(index) {
+            if (!isUnlocked) {
+                showToast('🔒 ابتدا قفل را باز کنید');
+                return;
+            }
+
+            if (!confirm('⚠️ آیا از حذف این تحلیل مطمئن هستید؟')) return;
+            
+            allNews.splice(index, 1);
+            saveNewsToServer(allNews).then(success => {
+                if (success) {
+                    renderNews();
+                    showToast('🗑️ تحلیل حذف شد');
+                }
+            });
+        };
+
+        window.editNews = function(index) {
+            if (!isUnlocked) {
+                showToast('🔒 ابتدا قفل را باز کنید');
+                return;
+            }
+
+            const item = allNews[index];
+            if (!item) return;
+
+            showWriteBox();
+            
+            document.getElementById('newsTitle').value = item.title;
+            document.getElementById('newsCategory').value = item.category;
+            document.getElementById('newsContent').value = item.content;
+            document.getElementById('newsImage').value = item.image || '';
+            
+            const saveBtn = document.getElementById('saveNewsBtn');
+            saveBtn.textContent = '🔄 بروزرسانی تحلیل';
+            
+            saveBtn.onclick = function() {
+                if (!isUnlocked) {
+                    showToast('🔒 ابتدا قفل را باز کنید');
+                    return;
+                }
+                
+                const newTitle = document.getElementById('newsTitle').value.trim();
+                const newCategory = document.getElementById('newsCategory').value;
+                const newContent = document.getElementById('newsContent').value.trim();
+                const newImage = document.getElementById('newsImage').value.trim();
+                
+                if (!newTitle || !newContent) {
+                    showToast('⚠️ عنوان و متن را پر کنید');
+                    return;
+                }
+                
+                allNews[index] = {
+                    ...item,
+                    title: newTitle,
+                    category: newCategory,
+                    content: newContent,
+                    image: newImage || item.image
+                };
+                
+                saveNewsToServer(allNews).then(success => {
+                    if (success) {
+                        renderNews();
+                        showToast('✅ تحلیل بروزرسانی شد');
+                        closeWriteBox();
+                        saveBtn.textContent = '📝 انتشار تحلیل';
+                        saveBtn.onclick = saveNewsItem;
+                    }
+                });
+            };
+        };
+
+        // ================================================================
+        //  پاک کردن همه
+        // ================================================================
+        document.getElementById('clearAllBtn').addEventListener('click', function() {
+            if (!isUnlocked) {
+                showToast('🔒 ابتدا قفل را باز کنید');
+                return;
+            }
+
+            if (allNews.length === 0) return;
+            
+            if (!confirm('⚠️ آیا از حذف تمام تحلیل‌ها مطمئن هستید؟ این عمل غیرقابل بازگشت است!')) return;
+            if (!confirm('‼️ تایید نهایی: همه ' + allNews.length + ' تحلیل حذف خواهند شد')) return;
+            
+            allNews = [];
+            saveNewsToServer(allNews).then(success => {
+                if (success) {
+                    renderNews();
+                    showToast('🗑️ همه تحلیل‌ها حذف شدند');
+                }
+            });
+        });
+
+        // ================================================================
+        //  نمایش/مخفی کردن باکس نوشتن
+        // ================================================================
+        function showWriteBox() {
+            if (!isUnlocked) {
+                showToast('🔒 ابتدا قفل را باز کنید');
+                return;
+            }
+            document.getElementById('writeBox').classList.add('show');
+            document.getElementById('newsTitle').focus();
+            
+            const saveBtn = document.getElementById('saveNewsBtn');
+            saveBtn.textContent = '📝 انتشار تحلیل';
+            saveBtn.onclick = saveNewsItem;
+        }
+
+        function closeWriteBox() {
+            document.getElementById('writeBox').classList.remove('show');
+            document.getElementById('newsTitle').value = '';
+            document.getElementById('newsContent').value = '';
+            document.getElementById('newsImage').value = '';
+            
+            const saveBtn = document.getElementById('saveNewsBtn');
+            saveBtn.textContent = '📝 انتشار تحلیل';
+            saveBtn.onclick = saveNewsItem;
+        }
+
+        // ================================================================
+        //  قفل و رمز (با سشن)
+        // ================================================================
+        function lockSite() {
+            isUnlocked = false;
+            document.getElementById('writeBox').classList.add('locked');
+            document.getElementById('lockBtn').textContent = '🔒 قفل';
+            document.getElementById('lockBtn').classList.remove('unlocked');
+            document.getElementById('lockStatusText').textContent = '🔒 قفل است';
+            document.getElementById('lockStatusText').className = 'locked-text';
+            closeWriteBox();
+            renderNews();
+            showToast('🔒 سایت قفل شد');
+            sessionStorage.removeItem('rok_unlocked');
+        }
+
+        function unlockSite(password) {
+            if (password === ADMIN_PASSWORD) {
+                isUnlocked = true;
+                document.getElementById('writeBox').classList.remove('locked');
+                document.getElementById('lockBtn').textContent = '🔓 باز';
+                document.getElementById('lockBtn').classList.add('unlocked');
+                document.getElementById('lockStatusText').textContent = '🔓 باز است (قابل ویرایش)';
+                document.getElementById('lockStatusText').className = 'unlocked-text';
+                document.getElementById('lockModal').classList.remove('show');
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordError').classList.remove('show');
+                renderNews();
+                showToast('🔓 قفل با موفقیت باز شد');
+                sessionStorage.setItem('rok_unlocked', 'true');
+                return true;
+            } else {
+                document.getElementById('passwordError').classList.add('show');
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+                showToast('❌ رمز عبور اشتباه است', 1500);
+                return false;
+            }
+        }
+
+        // ================================================================
+        //  دکمه نمایش/مخفی کردن رمز
+        // ================================================================
+        document.getElementById('togglePasswordBtn').addEventListener('click', function() {
+            const input = document.getElementById('passwordInput');
+            if (input.type === 'password') {
+                input.type = 'text';
+                this.textContent = '🙈';
+                this.title = 'مخفی کردن رمز';
+            } else {
+                input.type = 'password';
+                this.textContent = '👁️';
+                this.title = 'نمایش رمز';
+            }
+        });
+
+        // ================================================================
+        //  رویدادها و راه‌اندازی
+        // ================================================================
+        document.addEventListener('DOMContentLoaded', function() {
+
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+            
+            // بررسی سشن
+            if (sessionStorage.getItem('rok_unlocked') === 'true') {
+                setTimeout(() => {
+                    unlockSite(ADMIN_PASSWORD);
+                }, 500);
+            } else {
+                lockSite();
+            }
+            
+            // بارگذاری اطلاعات از سرور
+            loadNewsFromServer();
+
+            document.getElementById('showWriteBtn').addEventListener('click', showWriteBox);
+            document.getElementById('closeWriteBtn').addEventListener('click', closeWriteBox);
+
+            document.getElementById('lockBtn').addEventListener('click', function() {
+                if (isUnlocked) {
+                    lockSite();
+                } else {
+                    document.getElementById('lockModal').classList.add('show');
+                    document.getElementById('passwordInput').focus();
+                    document.getElementById('passwordError').classList.remove('show');
+                    document.getElementById('passwordInput').type = 'password';
+                    document.getElementById('togglePasswordBtn').textContent = '👁️';
+                }
+            });
+
+            document.getElementById('unlockBtn').addEventListener('click', function() {
+                const pass = document.getElementById('passwordInput').value;
+                unlockSite(pass);
+            });
+
+            document.getElementById('passwordInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    const pass = document.getElementById('passwordInput').value;
+                    unlockSite(pass);
+                }
+            });
+
+            document.getElementById('cancelModalBtn').addEventListener('click', function() {
+                document.getElementById('lockModal').classList.remove('show');
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordError').classList.remove('show');
+            });
+
+            document.getElementById('lockModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('show');
+                    document.getElementById('passwordInput').value = '';
+                    document.getElementById('passwordError').classList.remove('show');
+                }
+            });
+
+            document.querySelectorAll('.menu-inner button[data-category]').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.menu-inner button[data-category]').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.category;
+                    renderNews();
+                });
+            });
+
+            document.getElementById('searchBtn').addEventListener('click', function() {
+                searchQuery = document.getElementById('searchInput').value;
+                renderNews();
+            });
+
+            document.getElementById('searchInput').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    searchQuery = this.value;
+                    renderNews();
+                }
+            });
+
+            document.getElementById('searchInput').addEventListener('input', function() {
+                if (this.value === '') {
+                    searchQuery = '';
+                    renderNews();
+                }
+            });
+
+            document.getElementById('clearSearchBtn').addEventListener('click', function() {
+                document.getElementById('searchInput').value = '';
+                searchQuery = '';
+                renderNews();
+                document.getElementById('searchInput').focus();
+            });
+
+            document.getElementById('newsContent').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && e.ctrlKey) {
+                    e.preventDefault();
+                    saveNewsItem();
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.getElementById('fullModal').classList.remove('show');
+                    document.getElementById('lockModal').classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            showToast('🏛️ به تحلیل‌خانه رُک خوش آمدید', 3000);
+        });
+    </script>
+</body>
+</html>
