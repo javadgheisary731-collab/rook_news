@@ -18,6 +18,7 @@
     <meta property="og:description" content="تحلیل‌های تخصصی سیاست خارجی، دیپلماسی، اقتصاد، امنیت و نظامی">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rok-analysis.ir">
+    <meta property="og:image" content="https://javadgheisary731-collab.github.io/rook_news/logo-og.jpg">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -26,6 +27,7 @@
         :root {
             --primary: #c0392b;
             --primary-dark: #a93226;
+            --primary-light: #e74c3c;
             --secondary: #f7971e;
             --dark: #1a1a2e;
             --light: #f0f2f5;
@@ -68,7 +70,7 @@
         .header {
             background: var(--white);
             border-bottom: 4px solid var(--primary);
-            padding: 15px 30px;
+            padding: 12px 30px;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -83,30 +85,59 @@
             flex-wrap: wrap;
             gap: 15px;
         }
-        .logo h1 {
-            font-size: 28px;
-            color: var(--dark);
+        
+        /* ====== Logo ====== */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .logo h1 .rok {
+        .logo a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+        .logo-text h1 {
+            font-size: 22px;
+            color: var(--dark);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            line-height: 1.2;
+        }
+        .logo-text h1 .rok {
             color: var(--primary);
             font-weight: 900;
-            font-size: 32px;
+            font-size: 26px;
         }
-        .logo h1 .sub {
+        .logo-text h1 .sub {
             color: var(--secondary);
+            font-size: 18px;
             font-weight: 300;
-            font-size: 20px;
         }
-        .logo small {
+        .logo-text small {
             color: var(--gray);
-            font-size: 12px;
+            font-size: 11px;
             display: block;
             margin-top: 2px;
         }
-        .logo small .manager {
+        .logo-text small .manager {
             color: var(--primary);
             font-weight: 700;
         }
+
+        /* ====== Header Left ====== */
         .header-left {
             display: flex;
             align-items: center;
@@ -892,6 +923,70 @@
             color: var(--dark);
         }
 
+        /* ====== Date Filter Section ====== */
+        .date-filter-section {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .date-filter-section .filter-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .date-filter-section label {
+            font-weight: 700;
+            color: #555;
+            font-size: 14px;
+        }
+        .date-filter-section select {
+            padding: 8px 14px;
+            border: 2px solid #e8e8e8;
+            border-radius: 10px;
+            font-size: 13px;
+            background: #fafafa;
+            outline: none;
+            transition: var(--transition);
+        }
+        .date-filter-section select:focus {
+            border-color: var(--primary);
+        }
+        .date-filter-section .btn-filter {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 30px;
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .date-filter-section .btn-filter:hover {
+            background: var(--primary-dark);
+        }
+        .date-filter-section .btn-clear-filter {
+            padding: 8px 20px;
+            border: 2px solid #e8e8e8;
+            border-radius: 30px;
+            background: transparent;
+            color: #888;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .date-filter-section .btn-clear-filter:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
         /* ====== Pagination ====== */
         .pagination {
             display: flex;
@@ -922,6 +1017,32 @@
         .pagination button:disabled {
             opacity: 0.3;
             cursor: not-allowed;
+        }
+
+        /* ====== Date Group ====== */
+        .date-group {
+            margin-bottom: 30px;
+        }
+        .date-group .group-header {
+            background: var(--white);
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow);
+            border-right: 4px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .date-group .group-header h3 {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        .date-group .group-header .count {
+            color: var(--gray);
+            font-size: 0.85rem;
         }
 
         /* ====== Scroll to Top ====== */
@@ -987,6 +1108,12 @@
             border-top: 1px solid #e8e8e8;
             background: var(--white);
         }
+        .footer .footer-logo {
+            height: 30px;
+            width: auto;
+            margin-bottom: 10px;
+            opacity: 0.7;
+        }
         .footer strong { color: var(--primary); }
         .footer .manager { color: var(--secondary); }
         .footer .lock-status {
@@ -1000,8 +1127,11 @@
         /* ====== Responsive ====== */
         @media (max-width: 700px) {
             .header { padding: 12px 15px; }
-            .logo h1 { font-size: 22px; }
-            .logo h1 .rok { font-size: 26px; }
+            .logo img { height: 40px; }
+            .logo-text h1 { font-size: 18px; }
+            .logo-text h1 .rok { font-size: 20px; }
+            .logo-text h1 .sub { font-size: 14px; }
+            .logo-text small { font-size: 10px; }
             .menu { padding: 0 15px; top: 72px; }
             .menu-inner button { padding: 10px 14px; font-size: 12px; }
             .menu-inner .search-box input { width: 120px; }
@@ -1013,13 +1143,19 @@
             .modal-full-box { padding: 20px; }
             .modal-full-box .full-title { font-size: 20px; }
             .stats-section { grid-template-columns: 1fr 1fr; }
+            .date-filter-section { flex-direction: column; align-items: stretch; }
+            .date-filter-section .filter-group { flex-direction: column; }
+            .date-filter-section select { width: 100%; }
             .news-card .footer-card .date .full-date {
                 display: block;
             }
         }
         @media (max-width: 400px) {
-            .logo h1 { font-size: 18px; }
-            .logo h1 .rok { font-size: 22px; }
+            .logo img { height: 35px; }
+            .logo-text h1 { font-size: 15px; }
+            .logo-text h1 .rok { font-size: 17px; }
+            .logo-text h1 .sub { font-size: 12px; }
+            .logo-text small { font-size: 9px; }
             .header-left .stats { font-size: 11px; }
             .header-left .btn-write { font-size: 11px; padding: 6px 14px; }
             .menu-inner .search-box { width: 100%; margin-right: 0; }
@@ -1040,14 +1176,26 @@
     <!-- ====== Header ====== -->
     <header class="header">
         <div class="header-inner">
+            <!-- ====== LOGO ====== -->
             <div class="logo">
-                <h1>
-                    <span class="rok">رُک</span>
-                    <span class="sub">|</span>
-                    <span style="font-size:18px;font-weight:300;">تحلیل‌خانه سیاست خارجی</span>
-                </h1>
-                <small>مدیر مسئول: <span class="manager">جواد قیصری</span> · Rok Foreign Policy Analysis House</small>
+                <a href="/">
+                    <!-- لوگو (آپلود شده در گیت‌هاب) -->
+                    <img src="https://javadgheisary731-collab.github.io/rook_news/logo.png" 
+                         alt="لوگوی تحلیل‌خانه سیاست خارجی رُک" 
+                         title="رُک | تحلیل‌خانه سیاست خارجی">
+                    
+                    <!-- متن کنار لوگو -->
+                    <div class="logo-text">
+                        <h1>
+                            <span class="rok">رُک</span>
+                            <span class="sub">|</span>
+                            <span style="font-size:16px;font-weight:300;">تحلیل‌خانه سیاست خارجی</span>
+                        </h1>
+                        <small>مدیر مسئول: <span class="manager">جواد قیصری</span> · Rok Foreign Policy Analysis House</small>
+                    </div>
+                </a>
             </div>
+
             <div class="header-left">
                 <span class="datetime" id="datetimeDisplay">
                     <span class="date-part" id="todayDate"></span>
@@ -1114,17 +1262,17 @@
             <div class="chart-bar" id="chartBar"></div>
         </section>
 
-        <!-- ====== فیلتر تاریخ ====== -->
-        <div class="date-filter-section" style="background:var(--white);border-radius:var(--radius);padding:20px;margin-bottom:25px;box-shadow:var(--shadow);display:flex;flex-wrap:wrap;gap:15px;align-items:center;justify-content:space-between;">
-            <div class="filter-group" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-                <label style="font-weight:700;color:#555;font-size:14px;">📅 دسته‌بندی بر اساس:</label>
-                <select id="dateFilterType" style="padding:8px 14px;border:2px solid #e8e8e8;border-radius:10px;font-size:13px;background:#fafafa;outline:none;transition:var(--transition);">
+        <!-- ====== Date Filter Section ====== -->
+        <div class="date-filter-section">
+            <div class="filter-group">
+                <label>📅 دسته‌بندی بر اساس:</label>
+                <select id="dateFilterType">
                     <option value="month">ماه</option>
                     <option value="week">هفته</option>
                     <option value="year">سال</option>
                 </select>
-                <button class="btn-filter" id="applyDateFilter" style="padding:8px 20px;border:none;border-radius:30px;background:var(--primary);color:#fff;font-weight:700;cursor:pointer;transition:var(--transition);">اعمال</button>
-                <button class="btn-clear-filter" id="clearDateFilter" style="padding:8px 20px;border:2px solid #e8e8e8;border-radius:30px;background:transparent;color:#888;font-weight:700;cursor:pointer;transition:var(--transition);">حذف فیلتر</button>
+                <button class="btn-filter" id="applyDateFilter">اعمال</button>
+                <button class="btn-clear-filter" id="clearDateFilter">حذف فیلتر</button>
             </div>
             <div style="color:var(--gray);font-size:13px;">
                 <span id="newsCountFilter">0</span> تحلیل
@@ -1194,6 +1342,9 @@
 
         <!-- ====== Footer ====== -->
         <footer class="footer">
+            <img src="https://javadgheisary731-collab.github.io/rook_news/logo.png" 
+                 alt="لوگوی رُک" 
+                 class="footer-logo">
             <p>🏛️ <strong>تحلیل‌خانه سیاست خارجی رُک</strong> · مدیریت: <span class="manager">جواد قیصری</span></p>
             <p style="color:#ccc;font-size:12px;margin-top:5px;">تمامی حقوق محفوظ است · Rok Foreign Policy Analysis House</p>
             <div class="lock-status">
@@ -1578,7 +1729,6 @@
                     return new Date(b.date) - new Date(a.date);
                 });
 
-                // صفحه‌بندی درون گروهی
                 const totalInGroup = newsItems.length;
                 const groupStart = 0;
                 const groupEnd = Math.min(ITEMS_PER_PAGE, totalInGroup);
