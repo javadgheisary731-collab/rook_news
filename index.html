@@ -120,12 +120,6 @@ img{max-width:100%;display:block}
 body.dark-mode .header{border-bottom-color:var(--primary-dark)}
 .header-inner{max-width:1300px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px}
 .header-left{display:flex;align-items:center;gap:18px}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;transition:var(--transition)}
-.hamburger span{display:block;width:28px;height:3px;background:var(--dark);border-radius:10px;transition:var(--transition);transform-origin:center}
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
-.hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-6px)}
-body.dark-mode .hamburger span{background:var(--dark)}
 .logo{display:flex;align-items:center;gap:14px}
 .logo a{display:flex;align-items:center;gap:14px}
 .logo img{height:52px;width:auto;border-radius:12px;transition:var(--transition)}
@@ -174,26 +168,8 @@ body.dark-mode .menu-desktop{background:var(--white)}
 .search-suggestions .sug-item .sug-cat{color:var(--primary);font-size:11px;font-weight:700}
 .search-suggestions .sug-empty{padding:16px;text-align:center;color:var(--gray);font-size:13px}
 
-/* =============== MENU MOBILE =============== */
-.menu-mobile{display:none;position:fixed;top:0;right:0;bottom:0;width:320px;max-width:85vw;background:var(--white);box-shadow:0 0 60px rgba(0,0,0,.2);z-index:200;padding:30px 24px;overflow-y:auto;transform:translateX(100%);transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
-body.dark-mode .menu-mobile{background:var(--white)}
-.menu-mobile.open{transform:translateX(0)}
-.menu-mobile .menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;padding-bottom:16px;border-bottom:2px solid var(--gray-light)}
-.menu-mobile .menu-header .logo-mini{font-size:20px;font-weight:800;background:var(--primary-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.menu-mobile .menu-header .close-menu{background:none;border:none;font-size:28px;color:var(--gray);cursor:pointer;transition:var(--transition)}
-.menu-mobile .menu-header .close-menu:hover{transform:rotate(90deg);color:var(--primary)}
-.menu-mobile .menu-items{display:flex;flex-direction:column;gap:4px}
-.menu-mobile .menu-items button{padding:14px 18px;border:none;background:transparent;color:var(--dark);font-size:15px;font-weight:600;cursor:pointer;transition:var(--transition);font-family:var(--font);border-radius:var(--radius-sm);text-align:right;display:flex;align-items:center;gap:12px}
-.menu-mobile .menu-items button:hover{background:rgba(192,57,43,.06);color:var(--primary)}
-.menu-mobile .menu-items button.active{background:rgba(192,57,43,.1);color:var(--primary)}
-.menu-mobile .menu-items button .icon{width:30px;text-align:center}
-.menu-mobile .menu-divider{height:1px;background:var(--gray-light);margin:16px 0}
-.menu-mobile .menu-search{display:flex;gap:8px;margin-top:12px}
-.menu-mobile .menu-search input{flex:1;padding:10px 16px;border:2px solid var(--gray-light);border-radius:50px;font-size:13px;font-family:var(--font);background:var(--light);color:var(--dark);outline:none;transition:var(--transition)}
-.menu-mobile .menu-search input:focus{border-color:var(--primary)}
-.menu-mobile .menu-search button{padding:10px 18px;border:none;border-radius:50px;background:var(--primary-gradient);color:#fff;cursor:pointer;transition:var(--transition)}
-.menu-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:199;backdrop-filter:blur(4px)}
-.menu-overlay.show{display:block}
+/* =============== MENU MOBILE (غیرفعال شده - فقط برای حفظ ساختار حذف شد) =============== */
+/* منوی موبایل و اورلی و دکمه همبرگری به طور کامل حذف شدند */
 
 /* =============== BOTTOM NAV (Mobile) =============== */
 .bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--gray-light);z-index:90;box-shadow:0 -4px 20px rgba(0,0,0,.08);padding:6px 0;padding-bottom:calc(6px + env(safe-area-inset-bottom))}
@@ -535,9 +511,31 @@ body.dark-mode .menu-mobile{background:var(--white)}
 #toast.info{background:#3498db}
 
 /* =============== SCROLL TOP =============== */
-.scroll-top-btn{position:fixed;bottom:30px;left:30px;width:52px;height:52px;border:none;border-radius:50%;background:var(--primary-gradient);color:#fff;font-size:24px;cursor:pointer;display:none;z-index:50;box-shadow:0 4px 24px rgba(192,57,43,.4);transition:var(--transition)}
+.scroll-top-btn{
+  position:fixed;
+  bottom:30px;  /* موبایل: بالاتر از bottom-nav */
+  left:30px;
+  width:52px;
+  height:52px;
+  border:none;
+  border-radius:50%;
+  background:var(--primary-gradient);
+  color:#fff;
+  font-size:24px;
+  cursor:pointer;
+  display:none;
+  z-index:95;  /* بالاتر از bottom-nav (z-index:90) */
+  box-shadow:0 4px 24px rgba(192,57,43,.4);
+  transition:var(--transition);
+}
 .scroll-top-btn:hover{transform:scale(1.1)}
 .scroll-top-btn.show{display:block;animation:slideUp .3s ease}
+
+@media(max-width:768px){
+  .scroll-top-btn{
+    bottom:calc(70px + env(safe-area-inset-bottom)); /* بالاتر از bottom-nav */
+  }
+}
 
 /* =============== FOOTER =============== */
 .footer{background:var(--white);border-top:3px solid transparent;border-image:var(--primary-gradient);border-image-slice:1;padding:50px 30px 25px;margin-top:40px;transition:var(--transition)}
@@ -582,9 +580,7 @@ body.dark-mode .footer{border-top-color:var(--primary-dark)}
   .featured-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  .hamburger{display:flex}
   .menu-desktop{display:none}
-  .menu-mobile{display:block}
   .header{padding:10px 16px}
   .logo img{height:40px}
   .logo-text h1{font-size:18px}
@@ -636,7 +632,6 @@ body.dark-mode .footer{border-top-color:var(--primary-dark)}
   .news-card .title{font-size:15px}
   .footer{padding:30px 14px 16px}
   .modal-box{padding:24px 18px}
-  .menu-mobile{width:280px;padding:20px 16px}
   .hero-image{height:200px}
   .hero-content .hero-title{font-size:16px}
   .hero-content .hero-summary{display:none}
@@ -659,7 +654,7 @@ body.dark-mode .footer{border-top-color:var(--primary-dark)}
 <header class="header">
   <div class="header-inner">
     <div class="header-left">
-      <button class="hamburger" id="hamburgerBtn" aria-label="منو"><span></span><span></span><span></span></button>
+      <!-- دکمه همبرگری حذف شد -->
       <div class="logo">
         <a href="/" onclick="goHome(event)">
           <img src="https://javadgheisary731-collab.github.io/rook_news/logo.png" alt="لوگوی رُک" onerror="this.style.display='none'">
@@ -704,33 +699,8 @@ body.dark-mode .footer{border-top-color:var(--primary-dark)}
   </div>
 </nav>
 
-<!-- ============ MENU MOBILE ============ -->
-<div class="menu-overlay" id="menuOverlay"></div>
-<nav class="menu-mobile" id="menuMobile">
-  <div class="menu-header">
-    <span class="logo-mini">📰 رُک</span>
-    <button class="close-menu" id="closeMenuBtn" aria-label="بستن">✕</button>
-  </div>
-  <div class="menu-items">
-    <button class="active" data-category="all"><span class="icon">🏠</span> همه</button>
-    <button data-category="سیاسی"><span class="icon">🌍</span> سیاسی</button>
-    <button data-category="اقتصادی"><span class="icon">💰</span> اقتصادی</button>
-    <button data-category="امنیتی"><span class="icon">🛡️</span> امنیتی</button>
-    <button data-category="نظامی"><span class="icon">⚔️</span> نظامی</button>
-    <button data-category="دیپلماسی"><span class="icon">🤝</span> دیپلماسی</button>
-    <button data-category="تحلیل"><span class="icon">📊</span> تحلیل</button>
-  </div>
-  <div class="menu-divider"></div>
-  <div class="menu-search">
-    <input type="text" id="searchInputMobile" placeholder="🔍 جستجو..." autocomplete="off">
-    <button id="searchBtnMobile" aria-label="جستجو"><i class="fas fa-search"></i></button>
-  </div>
-  <div class="menu-divider"></div>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-    <button class="btn-primary-header" style="flex:1;padding:10px" id="showWriteBtnMobile"><i class="fas fa-pen"></i> تحلیل جدید</button>
-    <button class="btn-lock-header" style="flex:1;padding:10px;text-align:center" id="lockBtnMobile">🔒 قفل</button>
-  </div>
-</nav>
+<!-- ============ MENU MOBILE / OVERLAY / HAMBURGER ============ -->
+<!-- منوی موبایل، اورلی و منوی همبرگری به طور کامل حذف شدند -->
 
 <!-- ============ BOTTOM NAV (Mobile) ============ -->
 <div class="bottom-nav">
@@ -1537,7 +1507,6 @@ function webShare(i){
 function searchTag(tag){
   searchQuery=tag;
   document.getElementById('searchInput').value=tag;
-  document.getElementById('searchInputMobile').value=tag;
   goHome();
   renderNews();
   showToast('🔍 جستجو: #'+tag);
@@ -1545,7 +1514,6 @@ function searchTag(tag){
 function clearSearch(){
   searchQuery='';
   document.getElementById('searchInput').value='';
-  document.getElementById('searchInputMobile').value='';
   document.getElementById('searchSuggestions').classList.remove('show');
   renderNews();
 }
@@ -1565,7 +1533,6 @@ function showSuggestions(q){
 function filterCategory(cat){
   currentCategory=cat;
   document.querySelectorAll('.menu-desktop-inner button[data-category]').forEach(b=>b.classList.toggle('active',b.dataset.category===cat));
-  document.querySelectorAll('.menu-mobile .menu-items button[data-category]').forEach(b=>b.classList.toggle('active',b.dataset.category===cat));
   goHome();
   renderNews();
   showToast('🔍 نمایش: '+cat);
@@ -1685,7 +1652,6 @@ function lockSite(){
   document.getElementById('writeBox').classList.add('locked');
   document.getElementById('lockBtn').textContent='🔒 قفل';
   document.getElementById('lockBtn').classList.remove('unlocked');
-  document.getElementById('lockBtnMobile').textContent='🔒 قفل';
   closeWriteBox();renderAll();
   sessionStorage.removeItem('rok_unlocked');
   showToast('🔒 سایت قفل شد');
@@ -1696,7 +1662,6 @@ function unlockSite(pw){
     document.getElementById('writeBox').classList.remove('locked');
     document.getElementById('lockBtn').textContent='🔓 باز';
     document.getElementById('lockBtn').classList.add('unlocked');
-    document.getElementById('lockBtnMobile').textContent='🔓 باز';
     document.getElementById('lockModal').classList.remove('show');
     document.getElementById('passwordInput').value='';
     document.getElementById('passwordError').classList.remove('show');
@@ -1826,10 +1791,8 @@ function renderAll(){
 }
 
 /* ================================================================
-   Mobile Menu / Bottom Nav
+   Mobile Bottom Nav
    ================================================================ */
-function openMobileMenu(){document.getElementById('menuMobile').classList.add('open');document.getElementById('menuOverlay').classList.add('show');document.body.style.overflow='hidden'}
-function closeMobileMenu(){document.getElementById('menuMobile').classList.remove('open');document.getElementById('menuOverlay').classList.remove('show');document.body.style.overflow=''}
 function bottomNavAction(action){
   document.querySelectorAll('.bottom-nav-item').forEach(b=>b.classList.remove('active'));
   event.currentTarget.classList.add('active');
@@ -1837,7 +1800,7 @@ function bottomNavAction(action){
   else if(action==='search'){document.getElementById('searchInput').focus();window.scrollTo({top:200,behavior:'smooth'})}
   else if(action==='topics'){document.getElementById('trendingSection').scrollIntoView({behavior:'smooth'});switchTab('latest')}
   else if(action==='saved'){switchTab('saved');document.querySelector('.tabs-container').scrollIntoView({behavior:'smooth'})}
-  else if(action==='menu'){openMobileMenu()}
+  else if(action==='menu'){showToast('منو در دسترس نیست','info')}
 }
 
 /* ================================================================
@@ -1870,13 +1833,11 @@ document.addEventListener('DOMContentLoaded',()=>{
   loadNewsFromServer();
   // Handlers
   document.getElementById('showWriteBtn').addEventListener('click',showWriteBox);
-  document.getElementById('showWriteBtnMobile').addEventListener('click',()=>{closeMobileMenu();showWriteBox()});
   document.getElementById('closeWriteBtn').addEventListener('click',closeWriteBox);
   document.getElementById('saveNewsBtn').addEventListener('click',()=>saveArticle(false));
   document.getElementById('saveDraftBtn').addEventListener('click',()=>saveArticle(true));
   // Lock
   document.getElementById('lockBtn').addEventListener('click',()=>{if(isUnlocked)lockSite();else{document.getElementById('lockModal').classList.add('show');document.getElementById('passwordInput').focus();document.getElementById('passwordError').classList.remove('show')}});
-  document.getElementById('lockBtnMobile').addEventListener('click',()=>{if(isUnlocked)lockSite();else{closeMobileMenu();document.getElementById('lockModal').classList.add('show');document.getElementById('passwordInput').focus()}});
   document.getElementById('unlockBtn').addEventListener('click',()=>unlockSite(document.getElementById('passwordInput').value));
   document.getElementById('passwordInput').addEventListener('keydown',e=>{if(e.key==='Enter')unlockSite(document.getElementById('passwordInput').value)});
   document.getElementById('cancelModalBtn').addEventListener('click',()=>{document.getElementById('lockModal').classList.remove('show');document.getElementById('passwordInput').value=''});
@@ -1886,18 +1847,11 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('themeToggle').addEventListener('click',()=>{const dark=document.body.classList.toggle('dark-mode');applyTheme(dark?'dark':'light');localStorage.setItem(THEME_KEY,dark?'dark':'light')});
   // Desktop categories
   document.querySelectorAll('.menu-desktop-inner button[data-category]').forEach(b=>b.addEventListener('click',()=>filterCategory(b.dataset.category)));
-  // Mobile menu
-  document.getElementById('hamburgerBtn').addEventListener('click',()=>{const a=document.getElementById('hamburgerBtn').classList.toggle('active');if(a)openMobileMenu();else closeMobileMenu()});
-  document.getElementById('closeMenuBtn').addEventListener('click',()=>{closeMobileMenu();document.getElementById('hamburgerBtn').classList.remove('active')});
-  document.getElementById('menuOverlay').addEventListener('click',()=>{closeMobileMenu();document.getElementById('hamburgerBtn').classList.remove('active')});
-  document.querySelectorAll('.menu-mobile .menu-items button[data-category]').forEach(b=>b.addEventListener('click',()=>{filterCategory(b.dataset.category);closeMobileMenu();document.getElementById('hamburgerBtn').classList.remove('active')}));
   // Search
   const debouncedSuggest=debounce(q=>showSuggestions(q),250);
   document.getElementById('searchInput').addEventListener('input',function(){clearTimeout(this._t);this._t=setTimeout(()=>{searchQuery=this.value;renderNews();debouncedSuggest(this.value)},300)});
   document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter'){searchQuery=e.target.value;renderNews();document.getElementById('searchSuggestions').classList.remove('show')}});
   document.getElementById('searchBtn').addEventListener('click',()=>{searchQuery=document.getElementById('searchInput').value;renderNews()});
-  document.getElementById('searchInputMobile').addEventListener('keydown',e=>{if(e.key==='Enter'){searchQuery=e.target.value;document.getElementById('searchInput').value=e.target.value;closeMobileMenu();goHome();renderNews()}});
-  document.getElementById('searchBtnMobile').addEventListener('click',()=>{searchQuery=document.getElementById('searchInputMobile').value;document.getElementById('searchInput').value=searchQuery;closeMobileMenu();goHome();renderNews()});
   document.getElementById('clearSearchBtn').addEventListener('click',clearSearch);
   document.addEventListener('click',e=>{if(!e.target.closest('.search-box'))document.getElementById('searchSuggestions').classList.remove('show')});
   // Filters
@@ -1921,7 +1875,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   window.addEventListener('scroll',()=>document.getElementById('scrollTopBtn').classList.toggle('show',window.scrollY>300));
   document.getElementById('scrollTopBtn').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
   // Escape
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lockModal').classList.remove('show');closeMobileMenu();document.getElementById('hamburgerBtn').classList.remove('active')}});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lockModal').classList.remove('show')}});
   // Online/Offline
   window.addEventListener('online',()=>{updateOnlineStatus(true);showToast('🌐 اتصال برقرار شد','success')});
   window.addEventListener('offline',()=>{updateOnlineStatus(false);showToast('⚠️ اتصال قطع شد - حالت آفلاین','error',3000)});
