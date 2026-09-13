@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
 
-<title>رُک | تحلیل‌خانه سیاست خارجی | جواد قیصری</title>
+<title>رُک | تحلیل‌خانه سیاست خارجی رُک | جواد قیصری</title>
 <meta name="description" content="تحلیل‌های تخصصی سیاست خارجی، دیپلماسی، اقتصاد، امنیت و نظامی با مدیریت جواد قیصری.">
 <meta name="keywords" content="تحلیل سیاست خارجی, دیپلماسی, روابط بین‌الملل, جواد قیصری, رُک">
 <meta name="author" content="جواد قیصری">
@@ -167,9 +167,6 @@ body.dark-mode .menu-desktop{background:var(--white)}
 .search-suggestions .sug-item:hover{background:rgba(192,57,43,.06)}
 .search-suggestions .sug-item .sug-cat{color:var(--primary);font-size:11px;font-weight:700}
 .search-suggestions .sug-empty{padding:16px;text-align:center;color:var(--gray);font-size:13px}
-
-/* =============== MENU MOBILE (غیرفعال شده - فقط برای حفظ ساختار حذف شد) =============== */
-/* منوی موبایل و اورلی و دکمه همبرگری به طور کامل حذف شدند */
 
 /* =============== BOTTOM NAV (Mobile) =============== */
 .bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--gray-light);z-index:90;box-shadow:0 -4px 20px rgba(0,0,0,.08);padding:6px 0;padding-bottom:calc(6px + env(safe-area-inset-bottom))}
@@ -513,7 +510,7 @@ body.dark-mode .menu-desktop{background:var(--white)}
 /* =============== SCROLL TOP =============== */
 .scroll-top-btn{
   position:fixed;
-  bottom:30px;  /* موبایل: بالاتر از bottom-nav */
+  bottom:30px;
   left:30px;
   width:52px;
   height:52px;
@@ -524,7 +521,7 @@ body.dark-mode .menu-desktop{background:var(--white)}
   font-size:24px;
   cursor:pointer;
   display:none;
-  z-index:95;  /* بالاتر از bottom-nav (z-index:90) */
+  z-index:95;
   box-shadow:0 4px 24px rgba(192,57,43,.4);
   transition:var(--transition);
 }
@@ -533,7 +530,7 @@ body.dark-mode .menu-desktop{background:var(--white)}
 
 @media(max-width:768px){
   .scroll-top-btn{
-    bottom:calc(70px + env(safe-area-inset-bottom)); /* بالاتر از bottom-nav */
+    bottom:calc(70px + env(safe-area-inset-bottom));
   }
 }
 
@@ -579,18 +576,64 @@ body.dark-mode .footer{border-top-color:var(--primary-dark)}
   .hero-image{height:300px}
   .featured-grid{grid-template-columns:1fr}
 }
+
+/* ===== هدر موبایل: چیدمان چندردیفه، نمایش کامل همه اطلاعات ===== */
 @media(max-width:768px){
   .menu-desktop{display:none}
-  .header{padding:10px 16px}
-  .logo img{height:40px}
-  .logo-text h1{font-size:18px}
-  .logo-text h1 .sub{font-size:14px}
-  .logo-text small{font-size:10px}
-  .header-right .datetime{font-size:11px}
-  .header-right .stats{font-size:11px}
+
+  .header{padding:10px 12px}
+  .header-inner{
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+  }
+  .header-left{
+    width:100%;
+    justify-content:center;
+    gap:10px;
+  }
+  .logo a{
+    justify-content:center;
+    width:100%;
+    gap:10px;
+  }
+  .logo img{height:38px}
+  .logo-text{text-align:right}
+  .logo-text h1{
+    font-size:16px;
+    line-height:1.4;
+    white-space:normal;
+    word-break:break-word;
+  }
+  .logo-text h1 .sub{font-size:13px}
+  .logo-text small{font-size:10px;margin-top:2px}
+  .header-right{
+    width:100%;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .header-right .datetime{
+    font-size:10.5px;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    flex-wrap:wrap;
+    justify-content:center;
+    text-align:center;
+  }
+  .header-right .datetime .date-part{display:inline}
+  .header-right .datetime .separator{display:inline}
+  .header-right .stats{
+    font-size:11px;
+    display:inline-flex;
+    align-items:center;
+    gap:3px;
+  }
   .btn-primary-header{padding:6px 14px;font-size:11px}
   .btn-lock-header{padding:6px 12px;font-size:11px}
-  .btn-icon-header{width:34px;height:34px;font-size:14px}
+  .btn-icon-header{width:32px;height:32px;font-size:13px}
+
   .container{padding:16px 12px 90px}
   .news-grid{grid-template-columns:1fr}
   .stats-section{grid-template-columns:1fr 1fr}
@@ -615,15 +658,32 @@ body.dark-mode .footer{border-top-color:var(--primary-dark)}
   .dashboard-grid{grid-template-columns:1fr 1fr}
   .breaking-track-inner{animation-duration:20s}
 }
+
+/* ===== هدر موبایل کوچک: فشرده‌تر ولی بدون حذف اطلاعات ===== */
 @media(max-width:480px){
-  .logo img{height:34px}
-  .logo-text h1{font-size:15px}
-  .logo-text h1 .sub{font-size:12px}
-  .logo-text small{font-size:9px}
-  .header-right .stats{display:none}
-  .header-right .datetime .date-part{display:none}
+  .header{padding:8px 10px}
+  .header-inner{gap:8px}
+  .header-left{gap:8px}
+  .logo a{gap:8px}
+  .logo img{height:32px}
+  .logo-text h1{
+    font-size:13.5px;
+    line-height:1.5;
+  }
+  .logo-text h1 .sub{font-size:11px}
+  .logo-text small{font-size:8.5px;line-height:1.5}
+  .header-right{gap:6px}
+  .header-right .datetime{
+    font-size:9.5px;
+    gap:3px;
+    line-height:1.6;
+  }
+  .header-right .datetime .date-part{display:inline}
+  .header-right .datetime .separator{display:inline}
+  .header-right .stats{display:inline-flex;font-size:10px}
   .btn-primary-header{padding:5px 10px;font-size:10px}
   .btn-lock-header{padding:5px 10px;font-size:10px}
+  .btn-icon-header{width:28px;height:28px;font-size:12px}
   .stats-section{grid-template-columns:1fr 1fr;gap:10px}
   .stats-card{padding:14px 12px}
   .stats-card .number{font-size:22px}
@@ -654,7 +714,6 @@ body.dark-mode .footer{border-top-color:var(--primary-dark)}
 <header class="header">
   <div class="header-inner">
     <div class="header-left">
-      <!-- دکمه همبرگری حذف شد -->
       <div class="logo">
         <a href="/" onclick="goHome(event)">
           <img src="https://javadgheisary731-collab.github.io/rook_news/logo.png" alt="لوگوی رُک" onerror="this.style.display='none'">
@@ -698,9 +757,6 @@ body.dark-mode .footer{border-top-color:var(--primary-dark)}
     </div>
   </div>
 </nav>
-
-<!-- ============ MENU MOBILE / OVERLAY / HAMBURGER ============ -->
-<!-- منوی موبایل، اورلی و منوی همبرگری به طور کامل حذف شدند -->
 
 <!-- ============ BOTTOM NAV (Mobile) ============ -->
 <div class="bottom-nav">
